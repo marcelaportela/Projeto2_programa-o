@@ -13,8 +13,8 @@ class Bancoturmas():
                      idturma integer primary key autoincrement ,
                      codigoturma text,
                      periodo text,
-                     codigodisciplina text,
-                     cpfprofessor  text,
+                     turmacodigodisciplina text,
+                     turmacpfprofessor  text,
                      lista_cpf_alunos text)""")
         self.conexao.commit()
         c.close()

@@ -1,6 +1,7 @@
 from Usuarios import Usuarioprofessor
 from Usuarios import Usuarioaluno
 from Usuarios import Disciplina
+from Usuarios import Turma
 from tkinter import *
   
 class Application:
@@ -84,6 +85,60 @@ class Application:
         self.container19["padx"] = 20
         self.container19["pady"] = 5
         self.container19.pack()
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        self.container20 = Frame(master)   # texto de cima
+        self.container20["pady"] = 10
+        self.container20.pack()
+                                                    # texto de cima, id + botao buscar, nome, codigo, 3 botoes e texto de baixo
+        self.container21 = Frame(master)
+                                                    #------------------------------------Crud turma -------------------20 ao 28
+                                                    #TEXTO DE CIMA 20
+                                                    #ID+BOTAO BUSCAR 21
+                                                    #codigoturma text,  22
+                                                    #periodo text, 23
+                                                    #turmacodigodisciplina text, 24
+                                                    #turmacpfprofessor  text, 25
+                                                    #lista_cpf_alunos text)"" 26
+                                                    #3botoes 27
+                                                    #texto de baixo 28
+        
+        self.container21["padx"] = 20 #id + botao buscar
+        self.container21["pady"] = 5
+        self.container21.pack()
+        self.container22 = Frame(master) #codigoturma
+        self.container22["padx"] = 20
+        self.container22["pady"] = 5
+        self.container22.pack()
+        self.container23 = Frame(master) #periodo
+        self.container23["padx"] = 20
+        self.container23["pady"] = 5
+        self.container23.pack()
+        self.container24 = Frame(master) #codigodisciplina
+        self.container24["padx"] = 20
+        self.container24["pady"] = 5
+        self.container24.pack()
+
+        self.container25 = Frame(master) #cpfprofessor
+        self.container25["padx"] = 20
+        self.container25["pady"] = 5
+        self.container25.pack()
+        self.container26 = Frame(master)  #lista_cpf_alunos
+        self.container26["padx"] = 20
+        self.container26["pady"] = 5
+        self.container26.pack()
+        
+        self.container27 = Frame(master) #3 BOTOES
+        self.container27["padx"] = 20
+        self.container27["pady"] = 5
+        self.container27.pack()
+
+        self.container28 = Frame(master) #TEXTO DE BAIXO
+        self.container28["padx"] = 20
+        self.container28["pady"] = 5
+        self.container28.pack()
+
+        
        #-------------------------------------------------------------------------------------------------------CRUD PROFESSOR------------------------------------------------------------
   
         self.titulo = Label(self.container1, text="CRUD PROFESSOR")
@@ -243,6 +298,102 @@ class Application:
         self.bntExcluir.pack(side=LEFT)
   
         self.lblmsg = Label(self.container19, text="")
+        self.lblmsg["font"] = ("Verdana", "9", "italic")
+        self.lblmsg.pack()
+#-----------------------------------------------------------------------------------------CRUD TURMA----------------------------------------------------------------------------------------
+
+        #------------------------------------Crud turma -------------------20 ao 28
+                                                    #TEXTO DE CIMA 20
+                                                    #ID+BOTAO BUSCAR 21
+                                                    #codigoturma text,  22
+                                                    #periodo text, 23
+                                                    #codigodisciplina text, 24
+                                                    #cpfprofessor  text, 25
+                                                    #lista_cpf_alunos text)"" 26
+                                                    #3botoes 27
+                                                    #texto de baixo 28
+        
+        self.titulo = Label(self.container20, text="CRUD TURMA")
+        self.titulo["font"] = ("Calibri", "9", "bold")
+        self.titulo.pack ()
+  
+        self.lblidturma = Label(self.container21, text="idturma:", font=self.fonte, width=10)
+        self.lblidturma.pack(side=LEFT)
+  
+        self.txtidturma = Entry(self.container21)
+        self.txtidturma["width"] = 10
+        self.txtidturma["font"] = self.fonte
+        self.txtidturma.pack(side=LEFT)
+  
+        self.btnBuscar = Button(self.container21, text="Buscar", font=self.fonte, width=10)
+        self.btnBuscar["command"] = self.buscarturma
+        self.btnBuscar.pack(side=RIGHT)
+  
+        self.lblcodigoturma = Label(self.container22, text="Código da turma:", font=self.fonte, width=16)
+        self.lblcodigoturma.pack(side=LEFT)
+  
+        self.txtcodigoturma = Entry(self.container22)
+        self.txtcodigoturma["width"] = 25
+        self.txtcodigoturma["font"] = self.fonte
+        self.txtcodigoturma.pack(side=LEFT)
+  
+        self.lblperiodo = Label(self.container23, text="Período:", font=self.fonte, width=16)
+        self.lblperiodo.pack(side=LEFT)
+  
+        self.txtperiodo = Entry(self.container23)
+        self.txtperiodo["width"] = 25
+        self.txtperiodo["font"] = self.fonte
+        self.txtperiodo.pack(side=LEFT)
+
+        self.lblturmacodigodisciplina = Label(self.container24, text="Código da disciplina:", font=self.fonte, width=16)
+        self.lblturmacodigodisciplina.pack(side=LEFT)
+  
+        self.txtturmacodigodisciplina = Entry(self.container24)
+        self.txtturmacodigodisciplina["width"] = 25
+        self.txtturmacodigodisciplina["font"] = self.fonte
+        self.txtturmacodigodisciplina.pack(side=LEFT)
+
+                #------------------------------------Crud turma -------------------20 ao 28
+                                                    #TEXTO DE CIMA 20
+                                                    #ID+BOTAO BUSCAR 21
+                                                    #codigoturma text,  22
+                                                    #periodo text, 23
+                                                    #codigodisciplina text, 24
+                                                    #cpfprofessor  text, 25
+                                                    #lista_cpf_alunos text)"" 26
+                                                    #3botoes 27
+                                                    #texto de baixo 28
+
+        self.lblturmacpfprofessor = Label(self.container25, text="cpf do professor:", font=self.fonte, width=16)
+        self.lblcodigodisciplina.pack(side=LEFT)
+  
+        self.txtturmacpfprofessor = Entry(self.container25)
+        self.txtturmacpfprofessor["width"] = 25
+        self.txtturmacpfprofessor["font"] = self.fonte
+        self.txtturmacpfprofessor.pack(side=LEFT)
+
+        self.lbllista_cpf_alunos = Label(self.container26, text="cpf do aluno:", font=self.fonte, width=16)
+        self.lbllista_cpf_alunos.pack(side=LEFT)
+  
+        self.txtlista_cpf_alunos = Entry(self.container26)
+        self.txtlista_cpf_alunos["width"] = 25
+        self.txtlista_cpf_alunos["font"] = self.fonte
+        self.txtlista_cpf_alunos.pack(side=LEFT)
+  
+  
+        self.bntInsert = Button(self.container27, text="Inserir", font=self.fonte, width=12)
+        self.bntInsert["command"] = self.inserirturma
+        self.bntInsert.pack (side=LEFT)
+  
+        self.bntAlterar = Button(self.container27, text="Alterar", font=self.fonte, width=12)
+        self.bntAlterar["command"] = self.alterarturma
+        self.bntAlterar.pack (side=LEFT)
+  
+        self.bntExcluir = Button(self.container27, text="Excluir", font=self.fonte, width=12)
+        self.bntExcluir["command"] = self.excluirturma
+        self.bntExcluir.pack(side=LEFT)
+  
+        self.lblmsg = Label(self.container28, text="")
         self.lblmsg["font"] = ("Verdana", "9", "italic")
         self.lblmsg.pack()
   
@@ -432,7 +583,101 @@ class Application:
         self.txtcodigodisciplina.delete(0, END)
         self.txtcodigodisciplina.insert(INSERT,user.codigodisciplina)
 
+#-------------------------------------------------------------------------------------------CRUD TURMAS-------------------------------------------------------------------------------------
+
+#------------------------------------Crud turma -------------------20 ao 28
+                                                    #TEXTO DE CIMA 20
+                                                    #ID+BOTAO BUSCAR 21
+                                                    #codigoturma text,  22
+                                                    #periodo text, 23
+                                                    #codigodisciplina text, 24
+                                                    #cpfprofessor  text, 25
+                                                    #lista_cpf_alunos text)"" 26
+                                                    #3botoes 27
+                                                    #texto de baixo 28
+
+    def inserirturma(self):
+        user = Turma()
   
+        user.codigoturma = self.txtcodigoturma.get()
+        user.periodo = self.txtperiodo.get()
+        user.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
+        user.turmacpfprofessor = self.txtturmacpfprofessor.get()
+        user.lista_cpf_alunos = self.lista_cpf_alunos.get()
+  
+        self.lblmsg["text"] = user.inserirturma()
+  
+        self.txtidturma.delete(0, END)
+        self.txtcodigoturma.delete(0, END)
+        self.txtperiodo.delete(0, END)
+        self.txtturmacodigodisciplina.delete(0, END)
+        self.txtturmacpfprofessor.delete(0, END)
+        self.txtlista_cpf_alunos.delete(0, END)
+
+  
+  
+    def alterarturma(self):
+        user = Turma()
+  
+        user.idturma = self.txtiddisciplina.get()
+        user.codigoturma = self.txtcodigoturma.get()
+        user.periodo = self.txtperiodo.get()
+        user.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
+        user.turmacpfprofessor = self.txtturmacpfprofessor.get()
+        user.lista_cpf_alunos = self.lista_cpf_alunos.get()
+  
+        self.lblmsg["text"] = user.alterarturma()
+  
+        self.txtidturma.delete(0, END)
+        self.txtcodigoturma.delete(0, END)
+        self.txtperiodo.delete(0, END)
+        self.txtturmacodigodisciplina.delete(0, END)
+        self.txtturmacpfprofessor.delete(0, END)
+        self.txtlista_cpf_alunos.delete(0, END)
+  
+  
+  
+    def excluirturma(self):
+        user = Turma()
+  
+        user.idturma = self.txtidturma.get()
+  
+        self.lblmsg["text"] = user.deletarturma()
+  
+        self.txtidturma.delete(0, END)
+        self.txtcodigoturma.delete(0, END)
+        self.txtperiodo.delete(0, END)
+        self.txtturmacodigodisciplina.delete(0, END)
+        self.txtturmacpfprofessor.delete(0, END)
+        self.txtlista_cpf_alunos.delete(0, END)
+  
+  
+    def buscarturma(self):
+        user = Turma()
+  
+        idturma = self.txtidturma.get()
+  
+        self.lblmsg["text"] = user.selecionarturma(idturma)
+  
+        self.txtidturma.delete(0, END)
+        self.txtidturma.insert(INSERT, user.idturma)
+  
+        self.txtcodigoturma.delete(0, END)
+        self.txtcodigoturma.insert(INSERT, user.codigoturma)
+  
+        self.txtperiodo.delete(0, END)
+        self.txtperiodo.insert(INSERT,user.periodo)
+
+        self.txtturmacodigodisciplina.delete(0, END)
+        self.txtturmacodigodisciplina.insert(INSERT, user.codigodisciplina)
+  
+        self.txtturmacpfprofessor.delete(0, END)
+        self.txtturmacpfprofessor.insert(INSERT,user.cpfprofessor)
+
+        self.txtlista_cpf_alunos.delete(0, END)
+        self.txtlista_cpf_alunos.insert(INSERT,user.lista_cpf_alunos)
+
+
 root = Tk()
 Application(root)
 root.mainloop()
