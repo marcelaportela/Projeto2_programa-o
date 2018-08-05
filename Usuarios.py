@@ -259,15 +259,16 @@ class Turma(object):
                      #lista_cpf_alunos text)""
   
   
-    def inserirturma(self):
+    def inserturma(self):
   
         bancoturmas = Bancoturmas()
         try:
   
             c = bancoturmas.conexao.cursor()
   
-            c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos +"' )")
-  
+            #c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos +"' )")
+            c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos + "' )")
+
             bancoturmas.conexao.commit()
             c.close()
   
@@ -275,21 +276,21 @@ class Turma(object):
         except:
             return "Ocorreu um erro na inserção da turma"
   
-    def alterarturma(self):
+    def alterturma(self):
   
         bancoturmas = Bancoturmas()
-        try:
+        #try:
   
-            c = bancoturmas.conexao.cursor()
+        c = bancoturmas.conexao.cursor()
   
-            c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo = '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.cpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
+        #c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo = '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
+        c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo= '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
+        bancoturma.conexao.commit()  
+        c.close()
   
-            bancoturma.conexao.commit()  
-            c.close()
-  
-            return "Turma atualizada com sucesso!"
-        except:
-            return "Ocorreu um erro na alteração da turma"
+        return "Turma atualizada com sucesso!"
+        #except:
+            #return "Ocorreu um erro na alteração da turma"
   
     def deletarturma(self):
   

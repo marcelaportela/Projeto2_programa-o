@@ -10,86 +10,86 @@ class Application:
   
         self.container1 = Frame(master)
         self.container1["pady"] = 10
-        self.container1.pack()
+        self.container1.place(x = 100, y = 10, width=120, height=50)
         self.container2 = Frame(master)
         self.container2["padx"] = 20
         self.container2["pady"] = 5
-        self.container2.pack()
+        self.container2.place(x = 30, y = 50, width=300, height=70)
         self.container3 = Frame(master)
         self.container3["padx"] = 20
         self.container3["pady"] = 5                      #-------------------------------Crud professor
-        self.container3.pack()
+        self.container3.place(x = 30, y = 100, width=300, height=70)
         self.container4 = Frame(master)
         self.container4["padx"] = 20
         self.container4["pady"] = 5
-        self.container4.pack()
+        self.container4.place(x = 30, y = 150, width=300, height=70)
         self.container5 = Frame(master)
         self.container5["padx"] = 20
         self.container5["pady"] = 5
-        self.container5.pack()
+        self.container5.place(x = 30, y = 200, width=300, height=70)
         self.container6 = Frame(master)
         self.container6["padx"] = 20
         self.container6["pady"] = 5
-        self.container6.pack()
+        self.container6.place(x = 30, y = 250, width=300, height=70)
         self.container7 = Frame(master)
         self.container7["padx"] = 20
         self.container7["pady"] = 5
-        self.container7.pack()
+        self.container7.place(x = 30, y = 300, width=300, height=70)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         self.container8 = Frame(master)
         self.container8["pady"] = 10
-        self.container8.pack()
+        self.container8.place(x = 30, y = 400, width=120, height=50)
         self.container9 = Frame(master)            #------------------------------------Crud aluno -------------------8 ao 13
         self.container9["padx"] = 20
         self.container9["pady"] = 5
-        self.container9.pack()
+        self.container9.place(x = 30, y = 450, width=300, height=70)
         self.container10 = Frame(master)
         self.container10["padx"] = 20
         self.container10["pady"] = 5
-        self.container10.pack()
+        self.container10.place(x = 30, y = 500, width=300, height=70)
         self.container11 = Frame(master)
         self.container11["padx"] = 20
         self.container11["pady"] = 5
-        self.container11.pack()
+        self.container11.place(x = 30, y = 550, width=300, height=70)
         self.container12 = Frame(master)
         self.container12["padx"] = 20
         self.container12["pady"] = 5
-        self.container12.pack()
+        self.container12.place(x = 30, y = 600, width=300, height=70)
         self.container13 = Frame(master)
         self.container13["padx"] = 20
         self.container13["pady"] = 5
-        self.container13.pack()
+        self.container13.place(x = 30, y = 650, width=300, height=70)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         self.container14 = Frame(master)
         self.container14["pady"] = 10
-        self.container14.pack()
+        self.container14.place(x = 470, y = 10, width=120, height=50)
         self.container15 = Frame(master)            #------------------------------------Crud disciplina -------------------14 ao 19
         self.container15["padx"] = 20
         self.container15["pady"] = 5
-        self.container15.pack()
+        self.container15.place(x = 400, y = 50, width=300, height=70)
         self.container16 = Frame(master)
         self.container16["padx"] = 20
         self.container16["pady"] = 5
-        self.container16.pack()
+        self.container16.place(x = 400, y = 100, width=300, height=70)
         self.container17 = Frame(master)
         self.container17["padx"] = 20
         self.container17["pady"] = 5
-        self.container17.pack()
+        self.container17.place(x = 400, y = 150, width=300, height=70)
         self.container18 = Frame(master)
         self.container18["padx"] = 20
         self.container18["pady"] = 5
-        self.container18.pack()
+        self.container18.place(x = 400, y = 200, width=300, height=70)
         self.container19 = Frame(master)
         self.container19["padx"] = 20
         self.container19["pady"] = 5
-        self.container19.pack()
+        self.container19.place(x = 400, y = 250, width=300, height=70)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         self.container20 = Frame(master)   # texto de cima
         self.container20["pady"] = 10
-        self.container20.pack()
+        self.container20.place(x = 400, y = 350, width=300, height=70)
                                                     # texto de cima, id + botao buscar, nome, codigo, 3 botoes e texto de baixo
         self.container21 = Frame(master)
                                                     #------------------------------------Crud turma -------------------20 ao 28
@@ -105,38 +105,38 @@ class Application:
         
         self.container21["padx"] = 20 #id + botao buscar
         self.container21["pady"] = 5
-        self.container21.pack()
+        self.container21.place(x = 400, y = 400, width=300, height=70)
         self.container22 = Frame(master) #codigoturma
         self.container22["padx"] = 20
         self.container22["pady"] = 5
-        self.container22.pack()
+        self.container22.place(x = 400, y = 450, width=300, height=70)
         self.container23 = Frame(master) #periodo
         self.container23["padx"] = 20
         self.container23["pady"] = 5
-        self.container23.pack()
+        self.container23.place(x = 400, y = 500, width=300, height=70)
         self.container24 = Frame(master) #codigodisciplina
         self.container24["padx"] = 20
         self.container24["pady"] = 5
-        self.container24.pack()
+        self.container24.place(x = 400, y = 550, width=300, height=70)
 
         self.container25 = Frame(master) #cpfprofessor
-        self.container25["padx"] = 20
-        self.container25["pady"] = 5
-        self.container25.pack()
+        self.container25["padx"] = 40
+        self.container25["pady"] = 10
+        self.container25.place(x = 400, y = 600, width=500, height=70)
         self.container26 = Frame(master)  #lista_cpf_alunos
         self.container26["padx"] = 20
         self.container26["pady"] = 5
-        self.container26.pack()
+        self.container26.place(x = 400, y = 650, width=400, height=70)
         
         self.container27 = Frame(master) #3 BOTOES
         self.container27["padx"] = 20
         self.container27["pady"] = 5
-        self.container27.pack()
+        self.container27.place(x = 400, y = 700, width=300, height=70)
 
         self.container28 = Frame(master) #TEXTO DE BAIXO
         self.container28["padx"] = 20
         self.container28["pady"] = 5
-        self.container28.pack()
+        self.container28.place(x = 400, y = 750, width=300, height=70)
 
         
        #-------------------------------------------------------------------------------------------------------CRUD PROFESSOR------------------------------------------------------------
@@ -364,8 +364,8 @@ class Application:
                                                     #3botoes 27
                                                     #texto de baixo 28
 
-        self.lblturmacpfprofessor = Label(self.container25, text="cpf do professor:", font=self.fonte, width=16)
-        self.lblcodigodisciplina.pack(side=LEFT)
+        self.lblturmacpfprofessor = Label(self.container25, text="cpf do professor:", font=self.fonte, width=20)
+        self.lblturmacpfprofessor.pack(side=LEFT)
   
         self.txtturmacpfprofessor = Entry(self.container25)
         self.txtturmacpfprofessor["width"] = 25
@@ -603,9 +603,9 @@ class Application:
         user.periodo = self.txtperiodo.get()
         user.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
         user.turmacpfprofessor = self.txtturmacpfprofessor.get()
-        user.lista_cpf_alunos = self.lista_cpf_alunos.get()
+        user.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
   
-        self.lblmsg["text"] = user.inserirturma()
+        self.lblmsg["text"] = user.inserturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)
@@ -624,9 +624,9 @@ class Application:
         user.periodo = self.txtperiodo.get()
         user.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
         user.turmacpfprofessor = self.txtturmacpfprofessor.get()
-        user.lista_cpf_alunos = self.lista_cpf_alunos.get()
+        user.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
   
-        self.lblmsg["text"] = user.alterarturma()
+        self.lblmsg["text"] = user.alterturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)
@@ -669,10 +669,10 @@ class Application:
         self.txtperiodo.insert(INSERT,user.periodo)
 
         self.txtturmacodigodisciplina.delete(0, END)
-        self.txtturmacodigodisciplina.insert(INSERT, user.codigodisciplina)
+        self.txtturmacodigodisciplina.insert(INSERT, user.turmacodigodisciplina)
   
         self.txtturmacpfprofessor.delete(0, END)
-        self.txtturmacpfprofessor.insert(INSERT,user.cpfprofessor)
+        self.txtturmacpfprofessor.insert(INSERT,user.turmacpfprofessor)
 
         self.txtlista_cpf_alunos.delete(0, END)
         self.txtlista_cpf_alunos.insert(INSERT,user.lista_cpf_alunos)
