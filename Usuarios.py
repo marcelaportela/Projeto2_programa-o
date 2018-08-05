@@ -118,7 +118,7 @@ class Usuarioaluno(object):
   
             c = bancoalunos.conexao.cursor()
   
-            c.execute("update alunos set nome = '" + self.nome + "', cpf = '" + self.cpf + "' where idprofessor = " + self.idaluno + " ")
+            c.execute("update alunos set nome = '" + self.nome + "', cpf = '" + self.cpf + "' where idaluno = " + self.idaluno + " ")
   
             bancoalunos.conexao.commit()  
             c.close()
@@ -242,8 +242,8 @@ class Disciplina(object):
 #----------------------------------------------------------------------------------------------CRUD TURMAS-----------------------------------------------------------------------------------
 class Turma(object):
   
-  
-    def __init__(self, idturma = 0, codigoturma = "nao cadastrado", periodo = "nao cadastrado", turmacodigodisciplina= "nao cadastrado", turmacpfprofessor= "nao cadastrado", lista_cpf_alunos = "nao cadastrado"):
+    
+    def __init__(self, idturma = 0, codigoturma = "nao cadastrado", periodo = "nao cadastrado", turmacodigodisciplina= "nao cadastrado", turmacpfprofessor = "nao cadastrado", lista_cpf_alunos = "nao cadastrado"):
         self.info = {}
         self.idturma = idturma
         self.codigoturma = codigoturma
@@ -257,6 +257,7 @@ class Turma(object):
                      #codigodisciplina text,
                      #cpfprofessor  text,
                      #lista_cpf_alunos text)""
+
   
   
     def inserturma(self):
@@ -267,7 +268,7 @@ class Turma(object):
             c = bancoturmas.conexao.cursor()
   
             #c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos +"' )")
-            c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos + "' )")
+            c.execute("insert into turmas ( codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos + "' )")
 
             bancoturmas.conexao.commit()
             c.close()
@@ -284,8 +285,10 @@ class Turma(object):
         c = bancoturmas.conexao.cursor()
   
         #c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo = '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
-        c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo= '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
-        bancoturma.conexao.commit()  
+        c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo= '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma)
+        
+
+        bancoturmas.conexao.commit()  
         c.close()
   
         return "Turma atualizada com sucesso!"

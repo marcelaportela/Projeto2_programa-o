@@ -399,13 +399,13 @@ class Application:
   
   #---------------------------------------------------------------------------------------CRUD PROFESSOR------------------------------------------------------------------------------------
     def inserirprofessor(self):
-        user = Usuarioprofessor()
+        user1 = Usuarioprofessor()
   
-        user.nomeprofessor = self.txtnomeprofessor.get()
-        user.cpfprofessor = self.txtcpfprofessor.get()
-        user.departamento = self.txtdepartamento.get()
+        user1.nomeprofessor = self.txtnomeprofessor.get()
+        user1.cpfprofessor = self.txtcpfprofessor.get()
+        user1.departamento = self.txtdepartamento.get()
   
-        self.lblmsg["text"] = user.inserirprofessor()
+        self.lblmsg["text"] = user1.inserirprofessor()
   
         self.txtidprofessor.delete(0, END)
         self.txtnomeprofessor.delete(0, END)
@@ -414,14 +414,14 @@ class Application:
   
   
     def alterarprofessor(self):
-        user = Usuarioprofessor()
+        user1 = Usuarioprofessor()
   
-        user.idprofessor = self.txtidprofessor.get()
-        user.nomeprofessor = self.txtnomeprofessor.get()
-        user.cpfprofessor = self.txtcpfprofessor.get()
-        user.departamento = self.txtdepartamento.get()
+        user1.idprofessor = self.txtidprofessor.get()
+        user1.nomeprofessor = self.txtnomeprofessor.get()
+        user1.cpfprofessor = self.txtcpfprofessor.get()
+        user1.departamento = self.txtdepartamento.get()
   
-        self.lblmsg["text"] = user.alterarprofessor()
+        self.lblmsg["text"] = user1.alterarprofessor()
   
         self.txtidprofessor.delete(0, END)
         self.txtnomeprofessor.delete(0, END)
@@ -431,11 +431,11 @@ class Application:
   
   
     def excluirprofessor(self):
-        user = Usuarioprofessor()
+        user1 = Usuarioprofessor()
   
-        user.idprofessor = self.txtidprofessor.get()
+        user1.idprofessor = self.txtidprofessor.get()
   
-        self.lblmsg["text"] = user.deletarprofessor()
+        self.lblmsg["text"] = user1.deletarprofessor()
   
         self.txtidprofessor.delete(0, END)
         self.txtnomeprofessor.delete(0, END)
@@ -444,23 +444,23 @@ class Application:
   
   
     def buscarprofessor(self):
-        user = Usuarioprofessor()
+        user1 = Usuarioprofessor()
   
         idprofessor = self.txtidprofessor.get()
   
-        self.lblmsg["text"] = user.selecionarprofessor(idprofessor)
+        self.lblmsg["text"] = user1.selecionarprofessor(idprofessor)
   
         self.txtidprofessor.delete(0, END)
-        self.txtidprofessor.insert(INSERT, user.idprofessor)
+        self.txtidprofessor.insert(INSERT, user1.idprofessor)
   
         self.txtnomeprofessor.delete(0, END)
-        self.txtnomeprofessor.insert(INSERT, user.nomeprofessor)
+        self.txtnomeprofessor.insert(INSERT, user1.nomeprofessor)
   
         self.txtcpfprofessor.delete(0, END)
-        self.txtcpfprofessor.insert(INSERT,user.cpfprofessor)
+        self.txtcpfprofessor.insert(INSERT,user1.cpfprofessor)
   
         self.txtdepartamento.delete(0, END)
-        self.txtdepartamento.insert(INSERT, user.departamento)
+        self.txtdepartamento.insert(INSERT, user1.departamento)
 
         #print(user.cpf)
         #print(user.departamento)
@@ -468,12 +468,15 @@ class Application:
   
   #--------------------------------------------------------------------------------------------CRUD ALUNO------------------------------------------------------------------------------------
     def inseriraluno(self):
-        user = Usuarioaluno()
+        user2 = Usuarioaluno()
   
-        user.nome = self.txtnome.get()
-        user.cpf = self.txtcpf.get()
+        user2.nome = self.txtnome.get()
+        user2.cpf = self.txtcpf.get()
+
+        #print(user2.nome)
+        #print(user2.cpf)
   
-        self.lblmsg["text"] = user.inseriraluno()
+        self.lblmsg["text"] = user2.inseriraluno()
   
         self.txtidprofessor.delete(0, END)
         self.txtnome.delete(0, END)
@@ -482,13 +485,13 @@ class Application:
   
   
     def alteraraluno(self):
-        user = Usuarioaluno()
+        user2 = Usuarioaluno()
   
-        user.idaluno = self.txtidaluno.get()
-        user.nome = self.txtnome.get()
-        user.cpf = self.txtcpf.get()
+        user2.idaluno = self.txtidaluno.get()
+        user2.nome = self.txtnome.get()
+        user2.cpf = self.txtcpf.get()
   
-        self.lblmsg["text"] = user.alteraraluno()
+        self.lblmsg["text"] = user2.alteraraluno()
   
         self.txtidaluno.delete(0, END)
         self.txtnome.delete(0, END)
@@ -497,11 +500,11 @@ class Application:
   
   
     def excluiraluno(self):
-        user = Usuarioaluno()
+        user2 = Usuarioaluno()
   
-        user.idaluno = self.txtidaluno.get()
+        user2.idaluno = self.txtidaluno.get()
   
-        self.lblmsg["text"] = user.deletaraluno()
+        self.lblmsg["text"] = user2.deletaraluno()
   
         self.txtidaluno.delete(0, END)
         self.txtnome.delete(0, END)
@@ -509,30 +512,30 @@ class Application:
   
   
     def buscaraluno(self):
-        user = Usuarioaluno()
+        user2 = Usuarioaluno()
   
         idaluno = self.txtidaluno.get()
   
-        self.lblmsg["text"] = user.selecionaraluno(idaluno)
+        self.lblmsg["text"] = user2.selecionaraluno(idaluno)
   
         self.txtidaluno.delete(0, END)
-        self.txtidaluno.insert(INSERT, user.idaluno)
+        self.txtidaluno.insert(INSERT, user2.idaluno)
   
         self.txtnome.delete(0, END)
-        self.txtnome.insert(INSERT, user.nome)
+        self.txtnome.insert(INSERT, user2.nome)
   
         self.txtcpf.delete(0, END)
-        self.txtcpf.insert(INSERT,user.cpf)
+        self.txtcpf.insert(INSERT,user2.cpf)
   
 #-----------------------------------------------------------------------------------CRUD DISCIPLINA-------------------------------------------------------------------------------------------
 
     def inserirdisciplina(self):
-        user = Disciplina()
+        user3 = Disciplina()
   
-        user.nomedisciplina = self.txtnomedisciplina.get()
-        user.codigodisciplina = self.txtcodigodisciplina.get()
+        user3.nomedisciplina = self.txtnomedisciplina.get()
+        user3.codigodisciplina = self.txtcodigodisciplina.get()
   
-        self.lblmsg["text"] = user.inserirdisciplina()
+        self.lblmsg["text"] = user3.inserirdisciplina()
   
         self.txtiddisciplina.delete(0, END)
         self.txtnomedisciplina.delete(0, END)
@@ -541,13 +544,13 @@ class Application:
   
   
     def alterardisciplina(self):
-        user = Disciplina()
+        user3 = Disciplina()
   
-        user.iddisciplina = self.txtiddisciplina.get()
-        user.nomedisciplina = self.txtnomedisciplina.get()
-        user.codigodisciplina = self.txtcodigodisciplina.get()
+        user3.iddisciplina = self.txtiddisciplina.get()
+        user3.nomedisciplina = self.txtnomedisciplina.get()
+        user3.codigodisciplina = self.txtcodigodisciplina.get()
   
-        self.lblmsg["text"] = user.alterardisciplina()
+        self.lblmsg["text"] = user3.alterardisciplina()
   
         self.txtiddisciplina.delete(0, END)
         self.txtnomedisciplina.delete(0, END)
@@ -556,11 +559,11 @@ class Application:
   
   
     def excluirdisciplina(self):
-        user = Disciplina()
+        user3 = Disciplina()
   
-        user.iddisciplina = self.txtiddisciplina.get()
+        user3.iddisciplina = self.txtiddisciplina.get()
   
-        self.lblmsg["text"] = user.deletardisciplina()
+        self.lblmsg["text"] = user3.deletardisciplina()
   
         self.txtiddisciplina.delete(0, END)
         self.txtnomedisciplina.delete(0, END)
@@ -568,20 +571,20 @@ class Application:
   
   
     def buscardisciplina(self):
-        user = Disciplina()
+        user3 = Disciplina()
   
         iddisciplina = self.txtiddisciplina.get()
   
-        self.lblmsg["text"] = user.selecionardisciplina(iddisciplina)
+        self.lblmsg["text"] = user3.selecionardisciplina(iddisciplina)
   
         self.txtiddisciplina.delete(0, END)
-        self.txtiddisciplina.insert(INSERT, user.iddisciplina)
+        self.txtiddisciplina.insert(INSERT, user3.iddisciplina)
   
         self.txtnomedisciplina.delete(0, END)
-        self.txtnomedisciplina.insert(INSERT, user.nomedisciplina)
+        self.txtnomedisciplina.insert(INSERT, user3.nomedisciplina)
   
         self.txtcodigodisciplina.delete(0, END)
-        self.txtcodigodisciplina.insert(INSERT,user.codigodisciplina)
+        self.txtcodigodisciplina.insert(INSERT,user3.codigodisciplina)
 
 #-------------------------------------------------------------------------------------------CRUD TURMAS-------------------------------------------------------------------------------------
 
@@ -597,15 +600,22 @@ class Application:
                                                     #texto de baixo 28
 
     def inserirturma(self):
-        user = Turma()
+        user4 = Turma()
   
-        user.codigoturma = self.txtcodigoturma.get()
-        user.periodo = self.txtperiodo.get()
-        user.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
-        user.turmacpfprofessor = self.txtturmacpfprofessor.get()
-        user.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
+        user4.codigoturma = self.txtcodigoturma.get()
+        user4.periodo = self.txtperiodo.get()
+        user4.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
+        user4.turmacpfprofessor = self.txtturmacpfprofessor.get()
+        user4.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
+
+        print(user4.codigoturma)
+        print(user4.periodo)
+        print(user4.turmacodigodisciplina)
+        print(user4.turmacpfprofessor)
+        print(user4.lista_cpf_alunos)
+        
   
-        self.lblmsg["text"] = user.inserturma()
+        self.lblmsg["text"] = user4.inserturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)
@@ -617,16 +627,16 @@ class Application:
   
   
     def alterarturma(self):
-        user = Turma()
+        user4 = Turma()
   
-        user.idturma = self.txtiddisciplina.get()
-        user.codigoturma = self.txtcodigoturma.get()
-        user.periodo = self.txtperiodo.get()
-        user.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
-        user.turmacpfprofessor = self.txtturmacpfprofessor.get()
-        user.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
+        user4.idturma = self.txtiddisciplina.get()
+        user4.codigoturma = self.txtcodigoturma.get()
+        user4.periodo = self.txtperiodo.get()
+        user4.turmacodigodisciplina = self.txtturmacodigodisciplina.get()
+        user4.turmacpfprofessor = self.txtturmacpfprofessor.get()
+        user4.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
   
-        self.lblmsg["text"] = user.alterturma()
+        self.lblmsg["text"] = user4.alterturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)
@@ -638,11 +648,11 @@ class Application:
   
   
     def excluirturma(self):
-        user = Turma()
+        user4 = Turma()
   
-        user.idturma = self.txtidturma.get()
+        user4.idturma = self.txtidturma.get()
   
-        self.lblmsg["text"] = user.deletarturma()
+        self.lblmsg["text"] = user4.deletarturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)
@@ -653,29 +663,34 @@ class Application:
   
   
     def buscarturma(self):
-        user = Turma()
+        user4 = Turma()
   
         idturma = self.txtidturma.get()
   
-        self.lblmsg["text"] = user.selecionarturma(idturma)
+        self.lblmsg["text"] = user4.selecionarturma(idturma)
   
         self.txtidturma.delete(0, END)
-        self.txtidturma.insert(INSERT, user.idturma)
+        self.txtidturma.insert(INSERT, user4.idturma)
   
         self.txtcodigoturma.delete(0, END)
-        self.txtcodigoturma.insert(INSERT, user.codigoturma)
+        self.txtcodigoturma.insert(INSERT, user4.codigoturma)
   
         self.txtperiodo.delete(0, END)
-        self.txtperiodo.insert(INSERT,user.periodo)
+        self.txtperiodo.insert(INSERT,user4.periodo)
 
         self.txtturmacodigodisciplina.delete(0, END)
-        self.txtturmacodigodisciplina.insert(INSERT, user.turmacodigodisciplina)
+        self.txtturmacodigodisciplina.insert(INSERT, user4.turmacodigodisciplina)
   
         self.txtturmacpfprofessor.delete(0, END)
-        self.txtturmacpfprofessor.insert(INSERT,user.turmacpfprofessor)
+        self.txtturmacpfprofessor.insert(INSERT,user4.turmacpfprofessor)
 
         self.txtlista_cpf_alunos.delete(0, END)
-        self.txtlista_cpf_alunos.insert(INSERT,user.lista_cpf_alunos)
+        self.txtlista_cpf_alunos.insert(INSERT,user4.lista_cpf_alunos)
+        print(user4.codigoturma)
+        print(user4.periodo)
+        print(user4.turmacodigodisciplina)
+        print(user4.turmacpfprofessor)
+        print(user4.lista_cpf_alunos)
 
 
 root = Tk()

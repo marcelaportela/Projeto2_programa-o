@@ -12,8 +12,8 @@ class Bancoprofessores():
   
         c.execute("""create table if not exists professores (
                      idprofessor integer primary key autoincrement ,
-                     nome text,
-                     cpf text,
+                     nomeprofessor text,
+                     cpfprofessor text,
                      departamento text)""")
         self.conexao.commit()
         c.close()
