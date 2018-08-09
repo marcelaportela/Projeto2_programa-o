@@ -615,7 +615,7 @@ class Application:
         print(user4.lista_cpf_alunos)
         
   
-        self.lblmsg["text"] = user4.inserturma()
+        self.lblmsg["text"] = user4.insertturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)
@@ -636,7 +636,7 @@ class Application:
         user4.turmacpfprofessor = self.txtturmacpfprofessor.get()
         user4.lista_cpf_alunos = self.txtlista_cpf_alunos.get()
   
-        self.lblmsg["text"] = user4.alterturma()
+        self.lblmsg["text"] = user4.alterarturma()
   
         self.txtidturma.delete(0, END)
         self.txtcodigoturma.delete(0, END)

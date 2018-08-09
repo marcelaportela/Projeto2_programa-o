@@ -242,7 +242,7 @@ class Disciplina(object):
 #----------------------------------------------------------------------------------------------CRUD TURMAS-----------------------------------------------------------------------------------
 class Turma(object):
   
-    
+    global turma
     def __init__(self, idturma = 0, codigoturma = "nao cadastrado", periodo = "nao cadastrado", turmacodigodisciplina= "nao cadastrado", turmacpfprofessor = "nao cadastrado", lista_cpf_alunos = "nao cadastrado"):
         self.info = {}
         self.idturma = idturma
@@ -257,43 +257,46 @@ class Turma(object):
                      #codigodisciplina text,
                      #cpfprofessor  text,
                      #lista_cpf_alunos text)""
-
-  
-  
-    def inserturma(self):
+                                                
+       
+    def insertturma(self):
+        print("dentro de insert turma")
+        print(self.codigoturma)
+            
+        print(self.periodo)
+        print(self.turmacodigodisciplina)
+        print(self.turmacpfprofessor)
+        print(self.lista_cpf_alunos)
   
         bancoturmas = Bancoturmas()
         try:
   
             c = bancoturmas.conexao.cursor()
   
-            #c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos +"' )")
-            c.execute("insert into turmas ( codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos + "' )")
-
+            c.execute("insert into turmas (codigoturma, periodo, turmacodigodisciplina, turmacpfprofessor, lista_cpf_alunos) values ('" + self.codigoturma + "', '" + self.periodo + "', '" + self.turmacodigodisciplina + "', '" + self.turmacpfprofessor + "', '" + self.lista_cpf_alunos + "' )")
+  
             bancoturmas.conexao.commit()
             c.close()
   
             return "Turma cadastrada com sucesso!"
         except:
-            return "Ocorreu um erro na inserção da turma"
+            return "Ocorreu um erro na inserção da Turma"
   
-    def alterturma(self):
+    def alterarturma(self):
   
         bancoturmas = Bancoturmas()
-        #try:
+        try:
   
-        c = bancoturmas.conexao.cursor()
+            c = bancoturmas.conexao.cursor()
   
-        #c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo = '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
-        c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo= '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma)
-        
-
-        bancoturmas.conexao.commit()  
-        c.close()
+            c.execute("update turmas set codigoturma = '" + self.codigoturma + "', periodo = '" + self.periodo + "', turmacodigodisciplina = '" + self.turmacodigodisciplina + "', turmacpfprofessor = '" + self.turmacpfprofessor + "', lista_cpf_alunos = '" + self.lista_cpf_alunos + "' where idturma = " + self.idturma + " ")
   
-        return "Turma atualizada com sucesso!"
-        #except:
-            #return "Ocorreu um erro na alteração da turma"
+            bancoturmas.conexao.commit()
+            c.close()
+  
+            return "Turma atualizada com sucesso!"
+        except:
+            return "Ocorreu um erro na alteração da Turma"
   
     def deletarturma(self):
   
@@ -309,7 +312,7 @@ class Turma(object):
   
             return "Turma excluída com sucesso!"
         except:
-            return "Ocorreu um erro na exclusão da turma"
+            return "Ocorreu um erro na exclusão da Turma"
   
     def selecionarturma(self, idturma):
         bancoturmas = Bancoturmas()
@@ -324,15 +327,14 @@ class Turma(object):
                 self.codigoturma = linha[1]
                 self.periodo = linha[2]
                 self.turmacodigodisciplina = linha[3]
-                self.turmacpfprofessor[4]
-                self.lista_cpf_alunos[5]
-                     #codigoturma text,
-                     #periodo text,
-                     #codigodisciplina text,
-                     #cpfprofessor  text,
-                     #lista_cpf_alunos text)""
+                self.turmacpfprofessor = linha[4]
+                self.lista_cpf_alunos = linha[5]
+  
             c.close()
   
             return "Busca feita com sucesso!"
         except:
             return "Ocorreu um erro na busca da turma"
+  
+  
+  
